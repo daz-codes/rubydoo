@@ -1,0 +1,31 @@
+{
+  "name": "rubydoobydoo",
+  "version": "0.4.2",
+  "description": "Monkey patching JavaScript to make it Ruby Dooby Doo!",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "mocha"
+  },
+    "devDependencies": {
+        "mocha": "^10.0.0"
+    },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daz4126/rubydoobydoo.git"
+  },
+  "keywords": [
+    "ruby",
+    "monkeypatch",
+    "array",
+    "string",
+    "number",
+    "object"
+  ],
+  "author": "DAZ <darren.jones@hey.com>",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/daz4126/rubydoobydoo/issues"
+  },
+  "homepage": "https://github.com/daz4126/rubydoobydoo#readme"
+}
