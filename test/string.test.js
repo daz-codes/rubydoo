@@ -9,10 +9,31 @@ const decimal = "29.5"
 
 describe("first and last", function () {
   it("returns the first character of the string", function () {
-    assert.equal(str.first, "R");
+    assert.equal(str.first(), "R");
+  });
+  it("returns the first 4 characters of the string", function () {
+    assert.equal(str.first(4), "Ruby");
   });
   it("returns the last character of the string", function () {
-    assert.equal(str.last, "!");
+    assert.equal(str.last(), "!");
+  });
+  it("returns the last 4 character of the string", function () {
+    assert.equal(str.last(4), "Doo!");
+  });
+});
+
+describe("starts_with and ends_with", function () {
+  it("returns true if the string starts in the string provided as an argument", function () {
+    assert.equal(str.starts_with("Ruby"), true);
+  });
+  it("returns false if the string does not start in the string provided as an argument", function () {
+    assert.equal(str.starts_with("Doo!"), false);
+  });
+  it("returns true if the string ends in the string provided as an argument", function () {
+    assert.equal(str.ends_with("Doo!"), true);
+  });
+  it("returns false if the string does not end in the string provided as an argument", function () {
+    assert.equal(str.ends_with("Ruby"), false);
   });
 });
 
