@@ -126,6 +126,12 @@ describe("humanize, titleize and parameterize", function () {
 
 describe("count", function () {
   it("counts the number of characters that return true for the function provided", function () {
-    assert.equal(str.count(char => char === "o"), 4);
+    assert.equal(str.count("o"), 4);
+  });
+});
+
+describe("chars", function () {
+  it("returns an array of each char in the string", function () {
+    assert.deepEqual(str.chars, ["R","u","b","y"," ","D","o","o","b","y"," ","D","o","o","!"]);
   });
 });
