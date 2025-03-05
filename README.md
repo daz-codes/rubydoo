@@ -9,9 +9,12 @@ Ruby has loads of really nice methods, now you can use them in JS as well!
 Write code like:
 
 ```javascript
-[1,2,3].sum
-(5).squared
-"Rubydoobydoo".reverse
+[1,2,3].last // 3
+[1,2,3].count // 3 
+(21).ordinalize // "21st"
+"Rubydoobydoo".reverse //m "oodyboodybuR"
+[1,2,3].sum.squared // 9
+["Gold","Gold","Bronze","Gold","Silver","Gold","Silver"].tally // {"Gold": 4, "Bronze": 1, "Silver": 2}
 ```
 
 # Array Methods
