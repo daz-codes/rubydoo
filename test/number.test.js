@@ -112,6 +112,12 @@ describe("times", function () {
     n.times(() => count ++)
     assert.equal(count, n);
   });
+
+  it("should perform a funtion the given number of times and pass the iterator step value each time", function () {
+    let count = 0
+    n.times(i => count += i)
+    assert.equal(count, 406);
+  });
 });
 
 describe("mod and divmod", function () {
