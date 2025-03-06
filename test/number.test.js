@@ -71,6 +71,21 @@ describe("digits", function () {
 });
 
 describe("ordinalize", function () {
+  it("should return the string th if the number ends in anything except 1,2 or 3", function () {
+    assert.equal(n.ordinal, "th");
+  });
+  it("should return st if the number ends in a 1", function () {
+    assert.equal((121).ordinal, "st");
+  });
+  it("should return nd on if the number ends in a 2", function () {
+    assert.equal((42).ordinal, "nd");
+  });
+  it("should return rd if the number ends in a 3", function () {
+    assert.equal((3).ordinal, "rd");
+  });
+});
+
+describe("ordinalize", function () {
   it("should return a string with th on the end of the number if it ends in anything except 1,2 or 3", function () {
     assert.equal(n.ordinalize, "29th");
   });

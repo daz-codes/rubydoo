@@ -2,7 +2,6 @@ import assert from "assert";
 import "../lib/object.js";
 import "../lib/string.js";
 
-
 describe("Monkey patched Object methods", function () {
   
   const obj = { a: 1, b: 2, c: 3 };
