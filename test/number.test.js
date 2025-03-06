@@ -106,13 +106,13 @@ describe("upto", function () {
   });
 });
 
-// describe("times", function () {
-//   it("should perform a funtion the given number of times", function () {
-//     let count = 0
-//     n.times(() => count ++)
-//     assert.equal(count, n);
-//   });
-// });
+describe("times", function () {
+  it("should perform a funtion the given number of times", function () {
+    let count = 0
+    n.times(() => count ++)
+    assert.equal(count, n);
+  });
+});
 
 describe("mod and divmod", function () {
   it("should return the number remainder when the number is divided by the argument provided", function () {
