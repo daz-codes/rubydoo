@@ -2,7 +2,7 @@
 
 Helping JS be more Ruby.
 
-Unashamedly monkey patching JS.
+Unashamedly monkey patching JS numbers, strings, arrays and objects with Ruby methods.
 
 Ruby has loads of really nice methods, now you can use them in JS as well!
 
@@ -14,8 +14,16 @@ Write code like:
 (21).ordinalize // "21st"
 "Rubydoobydoo".reverse //m "oodyboodybuR"
 [1,2,3].sum.squared // 9
-["Gold","Gold","Bronze","Gold","Silver","Gold","Silver"].tally // {"Gold": 4, "Bronze": 1, "Silver": 2}
+["A","A","C","A","B","A","B"].tally // {"A": 4, "C": 1, "B": 2}
 ```
+
+## Usage
+
+```bash
+npm install rubydoobydoo
+```
+
+Then just add either `require "rubydoobydoo"` or `import "rubydoobydoo"` to the top of any JS file and suddenly coding in JS becomes a lot more ejoyable!
 
 # Array Methods
 
@@ -93,139 +101,175 @@ Returns the smallest or largest number in the array.
 [].min; // undefined
 ```
 
-uniq
+### `uniq`
 
-Description: Returns a new array with duplicate elements removed.
+Returns a new array with duplicate elements removed.
 
+```javascript
 [1, 2, 2, 3].uniq; // [1, 2, 3]
+```
 
-to_sentence
+### `to_sentence`
 
-Description: Converts the array into a human-readable sentence.
+Converts the array into a human-readable sentence.
 
+```javascript
 ["a", "b", "c"].to_sentence; // "a, b and c"
+```
 
-compact
+### `compact`
 
-Description: Returns a new array with null and undefined values removed.
+Returns a new array with null and undefined values removed.
 
+```javascript
 [1, null, 2, undefined, 3].compact; // [1, 2, 3]
+```
 
-to_param
+### `to_param`
 
-Description: Converts the array into a string joined by /.
+Converts the array into a string joined by /.
 
+```javascript
 ["users", 42, "edit"].to_param; // "users/42/edit"
+```
 
-Functional Methods
+## Functional Methods
 
-any(func?)
+### `any(func?)`
 
-Description: Returns true if at least one element satisfies func, or if the array is not empty.
+Returns true if at least one element satisfies func, or if the array is not empty.
 
+```javascript
 [1, 2, 3].any(x => x > 2); // true
 [].any(); // false
+```
 
-one(func?)
+### `one(func?)`
 
-Description: Returns true if exactly one element satisfies func.
+Returns true if exactly one element satisfies func.
 
+```javascript
 [1, 2, 3].one(x => x > 2); // true
 [1, 2, 3, 4].one(x => x > 2); // false
+```
 
-sum(func?)
+### `sum(func?)`
 
-Description: Returns the sum of all elements, or applies func before summing.
+Returns the sum of all elements, or applies func before summing.
 
+```javascript
 [1, 2, 3].sum(); // 6
 [1, 2, 3].sum(x => x * 2); // 12
+```
 
-reject(func)
+### `reject(func)`
 
-Description: Returns a new array without elements matching func.
+Returns a new array without elements matching func.
 
 [1, 2, 3, 4].reject(x => x % 2 === 0); // [1, 3]
 
-partition(func)
+### `partition(func)`
 
-Description: Splits the array into two: one matching func, one not.
+Splits the array into two: one matching func, one not.
 
+```javascript
 [1, 2, 3, 4].partition(x => x % 2 === 0); // [[2, 4], [1, 3]]
+```
 
-count(func?)
+### `count(func?)`
 
-Description: Returns the number of elements satisfying func, or the total length.
+Returns the number of elements satisfying func, or the total length.
 
+```javascript
 [1, 2, 3, 4].count(x => x % 2 === 0); // 2
 [1, 2, 3].count(); // 3
+```
 
-pluck(prop)
+### `pluck(prop)`
 
-Description: Extracts values of the given property from an array of objects.
+Extracts values of the given property from an array of objects.
 
+```javascript
 [{id: 1}, {id: 2}].pluck("id"); // [1, 2]
+```
 
-from(n)
+### `from(n)`
 
-Description: Returns a new array starting from index n.
+Returns a new array starting from index n.
 
+```javascript
 [10, 20, 30, 40].from(2); // [30, 40]
+```
 
-combination(n)
+### `combination(n)`
 
-Description: Returns all possible combinations of n elements.
+Returns all possible combinations of n elements.
 
+```javascript
 [1, 2, 3].combination(2); // [[1,2], [1,3], [2,3]]
+```
 
-tally()
+### `tally()`
 
-Description: Counts occurrences of each unique element.
+Counts occurrences of each unique element.
 
+```javascript
 ["a", "b", "a"].tally(); // { a: 2, b: 1 }
+```
 
-each_cons(n)
+### `each_cons(n)`
 
-Description: Returns overlapping subarrays of size n.
+Returns overlapping subarrays of size n.
 
+```javascript
 [1, 2, 3, 4].each_cons(2); // [[1,2], [2,3], [3,4]]
+```
 
-rotate(n = 1)
+### `rotate(n = 1)`
 
-Description: Returns a rotated array by n places.
+Returns a rotated array by n places.
 
+```javascript
 [1, 2, 3].rotate(); // [2, 3, 1]
+```
 
-sample(n = 1)
+### `sample(n = 1)`
 
-Description: Returns n random elements.
+Returns n random elements.
 
+```javascript
 [1, 2, 3, 4].sample(2); // Random subset
+```
 
-zip(arr)
+### `zip(arr)`
 
-Description: Zips two arrays together.
+Zips two arrays together.
 
+```javascript
 [1, 2, 3].zip(["a", "b", "c"]); // [[1, "a"], [2, "b"], [3, "c"]]
+```
 
-union(...arrs)
+### `union(...arrs)`
 
-Description: Returns a merged array without duplicates.
+Returns a merged array without duplicates.
 
+```javascript
 [1, 2].union([2, 3], [3, 4]); // [1, 2, 3, 4]
+```
 
-Aliases
+## Aliases
 
-collect → map
+`collect → map`
 
-all → every
+`all → every`
 
-select → filter
+`select → filter`
 
-each → forEach
+`each → forEach`
 
-detect → find
+`detect → find`
 
-inject → reduce
+`inject → reduce`
 
-delete_if → reject
+`delete_if → reject`
 
