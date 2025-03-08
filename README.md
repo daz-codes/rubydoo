@@ -1,4 +1,4 @@
-# Rubydoobydoo!
+# Ruby Dooby Doo!
 
 Helping JS be more Ruby.
 
