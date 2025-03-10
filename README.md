@@ -26,6 +26,389 @@ npm install rubydoobydoo
 
 Then just add either `require "rubydoobydoo"` or `import "rubydoobydoo"` to the top of any JS file and suddenly coding in JS becomes a lot more ejoyable!
 
+# Number Methods
+
+## `number.even`
+
+Checks if the number is even.
+
+```javascript
+(4).even;  // true
+(5).even;  // false
+```
+
+## `number.odd`
+
+Checks if the number is odd.
+
+```javascript
+(3).odd;   // true
+(10).odd;  // false
+```
+
+## `number.to_s`
+
+Converts the number to a string.
+
+```javascript
+(42).to_s;  // "42"
+```
+
+## `number.next`
+
+Returns the next integer.
+
+```javascript
+(10).next;  // 11
+```
+
+## `number.round`
+
+Rounds the number to the nearest integer.
+
+```javascript
+(4.7).round;  // 5
+(4.2).round;  // 4
+```
+
+## `number.ceil`
+
+Returns the smallest integer greater than or equal to the number.
+
+```javascript
+(4.2).ceil;  // 5
+```
+
+## `number.floor`
+
+Returns the largest integer less than or equal to the number.
+
+```javascript
+(4.9).floor;  // 4
+```
+
+## `number.digits`
+
+Returns an array of the digits of the number.
+
+```javascript
+(123).digits;  // [1, 2, 3]
+```
+
+## `number.factors`
+
+Returns an array of all factors of the number.
+
+```javascript
+(12).factors;  // [1, 2, 3, 4, 6, 12]
+```
+
+## `number.prime`
+
+Checks if the number is prime.
+
+```javascript
+(7).prime;  // true
+(9).prime;  // false
+```
+
+## `number.integer`
+
+Checks if the number is an integer.
+
+```javascript
+(10.5).integer;  // false
+(10).integer;    // true
+```
+
+## `number.positive`
+
+Checks if the number is positive.
+
+```javascript
+(5).positive;   // true
+(-3).positive;  // false
+```
+
+## `number.negative`
+
+Checks if the number is negative.
+
+```javascript
+(-10).negative;  // true
+(5).negative;    // false
+```
+
+## `number.zero`
+
+Checks if the number is zero.
+
+```javascript
+(0).zero;  // true
+(1).zero;  // false
+```
+
+## `number.squared`
+
+Returns the square of the number.
+
+```javascript
+(4).squared;  // 16
+```
+
+## `number.cubed`
+
+Returns the cube of the number.
+
+```javascript
+(3).cubed;  // 27
+```
+
+## `number.ordinal`
+
+Returns the ordinal suffix of the number.
+
+```javascript
+(1).ordinal;   // "st"
+(2).ordinal;   // "nd"
+(3).ordinal;   // "rd"
+(4).ordinal;   // "th"
+(11).ordinal;  // "th"
+```
+
+## `number.ordinalize`
+
+Returns the number as an ordinal string.
+
+```javascript
+(1).ordinalize;   // "1st"
+(2).ordinalize;   // "2nd"
+(3).ordinalize;   // "3rd"
+(4).ordinalize;   // "4th"
+(11).ordinalize;  // "11th"
+```
+
+## `number.upto(n, func?)`
+
+Iterates from the current number up to n, calling func if provided.
+
+```javascript
+(3).upto(6, console.log);  
+// Logs: 3, 4, 5, 6
+
+(3).upto(6);  
+// Returns: [3, 4, 5, 6]
+```
+
+## `number.times(func)`
+
+Executes func the given number of times, passing the index as an optional argument.
+
+```javascript
+(3).times(_ => console.log("Ruby!"));
+// Logs: Ruby!Ruby!Ruby!
+
+(3).times(i => console.log(`Iteration: ${i}`));
+// Logs: Iteration: 0, Iteration: 1, Iteration: 2
+```
+
+## `number.mod(n)`
+
+Returns the remainder of the number divided by n.
+
+```javascript
+(10).mod(3);  // 1
+```
+
+## `number.divmod(n)`
+
+Returns an array containing the quotient and remainder of division by n.
+
+```javascript
+(10).divmod(3);  // [3, 1]
+```
+
+## `number.gcd(n)`
+
+Computes the greatest common divisor (GCD) of the number and n.
+
+```javascript
+(48).gcd(18);  // 6
+```
+
+## `number.lcm(n)`
+
+Computes the least common multiple (LCM) of the number and n.
+
+```javascript
+(4).lcm(6);  // 12
+```
+
+## `number.between(a, b)`
+
+Checks if the number is between a and b (inclusive).
+
+```javascript
+(5).between(1, 10);  // true
+(15).between(1, 10); // false
+```
+
+# String Mehtods
+
+## `string.reverse`
+
+Returns the string reversed.
+
+```javascript
+"hello".reverse;  // "olleh"
+```
+
+## `string.size`
+Returns the length of the string.
+
+```javascript
+"hello".size;  // 5
+```
+
+## `string.to_i`
+Converts the string to an integer, returning 0 if conversion fails.
+
+```javascript
+"123".to_i;   // 123
+"abc".to_i;   // 0
+```
+
+## `string.to_f`
+Converts the string to a float, returning 0 if conversion fails.
+
+```javascript
+"12.34".to_f;   // 12.34
+"abc".to_f;     // 0
+```
+
+## `string.downcase`
+Returns the string in lowercase.
+
+```javascript
+"Hello".downcase;  // "hello"
+```
+
+## `string.upcase`
+Returns the string in uppercase.
+
+```javascript
+"hello".upcase;  // "HELLO"
+```
+
+## `string.upcase_first`
+Capitalizes only the first character of the string.
+
+```javascript
+"hello world".upcase_first;  // "Hello world"
+```
+
+## `string.downcase_first`
+
+Lowercases only the first character of the string.
+
+"Hello World".downcase_first;  // "hello World"
+
+## `string.squish`
+
+Removes leading, trailing, and multiple consecutive spaces.
+
+```javascript
+"  Hello    world   ".squish;  // "Hello world"
+```
+
+## `string.blank`
+
+Checks if the string is empty or contains only whitespace.
+
+```javascript
+"   ".blank;  // true
+"hello".blank;  // false
+```
+
+## `string.empty`
+
+Checks if the string is completely empty (not even whitespace).
+
+```javascript
+"".empty;  // true
+" ".empty;  // false
+```
+
+## `string.humanize`
+
+Removes _id from the end (if present) and replaces underscores with spaces, capitalizing the first letter.
+
+```javascript
+"user_name".humanize;  // "User name"
+"post_id".humanize;    // "Post"
+```
+
+## `string.titleize (Alias: titlecase)`
+
+Capitalizes each word in the string.
+
+```javascript
+"hello world".titleize;  // "Hello World"
+```
+
+## `string.parameterize`
+
+Converts the string into a URL-friendly format (lowercase, hyphenated).
+
+```javascript
+"Hello, World!".parameterize;  // "hello-world"
+```
+
+## `string.chars`
+Returns an array of individual characters.
+
+```javascript
+"hello".chars;  // ["h", "e", "l", "l", "o"]
+```
+
+## `string.count(substring)`
+
+Returns the number of times substring appears in the string.
+
+```javascript
+"hello world".count("l");  // 3
+```
+
+## `string.starts_with(substring)`
+Checks if the string starts with the given substring.
+
+```javascript
+"hello world".starts_with("hello");  // true
+```
+
+## `string.ends_with(substring)`
+Checks if the string ends with the given substring.
+
+```javascript
+"hello world".ends_with("world");  // true
+```
+
+## `string.first(n)`
+Returns the first n characters of the string. If n is omitted, returns the first character.
+
+```javascript
+"hello".first(2);  // "he"
+"hello".first();   // "h"
+```
+
+## `string.last(n)`
+Returns the last n characters of the string. If n is omitted, returns the last character.
+
+```javascript
+"hello".last(2);  // "lo"
+"hello".last();   // "o"
+```
+
 # Array Methods
 
 ## Property Methods
@@ -274,3 +657,84 @@ Returns a merged array without duplicates.
 
 `delete_if → reject`
 
+# Object Methods
+
+## `object.empty`
+Checks if an object has no keys.  
+
+```javascript
+({}).empty;  // true
+({ a: 1 }).empty;  // false
+```
+
+object.size
+Returns the number of keys in the object.
+
+({ a: 1, b: 2 }).size;  // 2
+object.values
+Returns an array of the object's values.
+
+({ a: 1, b: 2 }).values;  // [1, 2]
+object.keys
+Returns an array of the object's keys.
+
+({ a: 1, b: 2 }).keys;  // ["a", "b"]
+object.entries
+Returns an array of [key, value] pairs.
+
+({ a: 1, b: 2 }).entries;  // [["a", 1], ["b", 2]]
+object.clear
+Removes all properties from an object (mutates it).
+
+const obj = { a: 1, b: 2 };
+obj.clear;
+console.log(obj);  // {}
+object.compact
+Returns a new object with null and undefined values removed.
+
+({ a: 1, b: null, c: undefined }).compact;  // { a: 1 }
+Methods
+
+object.map(func)
+Applies a function to each [key, value] pair and returns an array of results.
+
+({ a: 1, b: 2 }).map(([k, v]) => [k, v * 2]);  // [["a", 2], ["b", 4]]
+object.select(func)
+Returns a new object with key-value pairs where func(key, value) is true.
+
+({ a: 1, b: 2 }).select(([k, v]) => v > 1);  // { b: 2 }
+object.keep_if(func)
+Alias for select.
+
+object.reject(func)
+Returns a new object with key-value pairs where func(key, value) is false.
+
+({ a: 1, b: 2 }).reject(([k, v]) => v > 1);  // { a: 1 }
+object.delete_if(func)
+Alias for reject.
+
+object.has_key(key)
+Checks if an object has a given key.
+
+({ a: 1 }).has_key("a");  // true
+({ a: 1 }).has_key("b");  // false
+object.has_value(value)
+Checks if an object contains a given value.
+
+({ a: 1, b: 2 }).has_value(2);  // true
+({ a: 1 }).has_value(3);  // false
+object.key(value)
+Returns the first key where the value matches, or undefined if not found.
+
+({ a: 1, b: 2 }).key(2);  // "b"
+({ a: 1 }).key(3);  // undefined
+object.any([func])
+If func is provided, checks if any key-value pair matches func(key, value).
+If func is omitted, returns true if the object is not empty.
+({ a: 1, b: 2 }).any();  // true
+({}).any();  // false
+({ a: 1, b: 2 }).any(([k, v]) => v > 1);  // true
+object.except(...keys)
+Returns a new object excluding specified keys.
+
+({ a: 1, b: 2, c: 3 }).except("b", "c");  // { a: 1 }
