@@ -1,6 +1,6 @@
-# Rubydoobydoo!
+# Ruby Doo
 
-Helping JS be more Ruby.
+Helping JS do more Ruby.
 
 Unashamedly monkey patching JS numbers, strings, arrays and objects with Ruby methods.
 
@@ -16,6 +16,7 @@ Write code like:
 [1,2,3].sum.squared // 9
 ["A","A","C","A","B","A","B"].tally // {"A": 4, "C": 1, "B": 2}
 ```
+## Ruby Dooby Doo!
 
 ## Usage
 
