@@ -12,11 +12,28 @@ Write code like:
 [1,2,3].last // 3
 [1,2,3].count // 3 
 (21).ordinalize // "21st"
-"Rubydoobydoo".reverse //m "oodyboodybuR"
-[1,2,3].sum.squared // 9
+"Rubydoobydoo".reverse // "oodyboodybuR"
+[1,2,3].sum.squared // 36
 ["A","A","C","A","B","A","B"].tally // {"A": 4, "C": 1, "B": 2}
 ```
 ## Ruby Dooby Doo!
+
+In general, if you know the Ruby methods you should be able to use them in almost the same way, with a few slight changes:
+
+* Blocks change to arrow functions
+* JavaScript does not support appending symbols to the end of function names, so Boolean methods can't end in a `?`
+
+So for example, this Ruby:
+
+```ruby
+[1,2,3].count{ |n| n.odd? }
+```
+
+Would be written in JavaScript as:
+
+```javascript
+[1,2,3].count( n => n.odd )
+```
 
 ## Usage
 
