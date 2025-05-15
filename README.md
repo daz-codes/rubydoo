@@ -18,6 +18,14 @@ Write code like:
 ```
 ## Ruby Dooby Doo!
 
+## Usage
+
+```bash
+npm install rubydoobydoo
+```
+
+Then just add either `require "rubydoobydoo"` or `import "rubydoobydoo"` to the top of any JS file and suddenly coding in JS becomes a lot more fun and productive!
+
 In general, if you know the Ruby methods you should be able to use them in almost the same way, with a few slight changes:
 
 * Blocks change to arrow functions
@@ -34,14 +42,6 @@ Would be written in JavaScript as:
 ```javascript
 [1,2,3].count( n => n.odd )
 ```
-
-## Usage
-
-```bash
-npm install rubydoobydoo
-```
-
-Then just add either `require "rubydoobydoo"` or `import "rubydoobydoo"` to the top of any JS file and suddenly coding in JS becomes a lot more ejoyable!
 
 # Number Methods
 
