@@ -12,7 +12,7 @@ Write code like:
 [1,2,3].last // 3
 [1,2,3].count // 3 
 (21).ordinalize // "21st"
-"Rubydoobydoo".reverse // "oodyboodybuR"
+"Rubydoobydoo".downcase.reverse // "oodyboodybur"
 [1,2,3].sum.squared // 36
 ["A","A","C","A","B","A","B"].tally // {"A": 4, "C": 1, "B": 2}
 ```
@@ -430,7 +430,7 @@ Returns the last n characters of the string. If n is omitted, returns the last c
 
 ## Property Methods
 
-### `first`
+### `array.first`
 
 Returns the first element of the array.
 
@@ -439,7 +439,7 @@ Returns the first element of the array.
 [].first; // undefined
 ```
 
-### `second`, `third`, `fourth`, `fifth`
+### `array.second`, `array.third`, `array.fourth`, `array.fifth`
 
 Returns the second, third, fourth, or fifth element of the array.
 
@@ -448,7 +448,7 @@ Returns the second, third, fourth, or fifth element of the array.
 [10].third; // undefined
 ```
 
-### `forty_two`
+### `array.forty_two`
 
 Returns the 42nd element (index 41) of the array.
 
@@ -465,7 +465,7 @@ Returns the third-to-last, second-to-last, or last element of the array.
 [].last; // undefined
 ```
 
-### `empty`
+### `array.empty`
 
 Returns true if the array is empty, false otherwise.
 
@@ -474,17 +474,17 @@ Returns true if the array is empty, false otherwise.
 [1].empty; // false
 ```
 
-### `clear()`
+### `array.clear`
 
 Clears all elements from the array.
 
 ```javascript
 let arr = [1, 2, 3];
-arr.clear();
+arr.clear;
 console.log(arr); // []
 ```
 
-### `size`
+### `array.size`
 
 Returns the length of the array.
 
@@ -492,7 +492,7 @@ Returns the length of the array.
 [1, 2, 3].size; // 3
 ```
 
-### `min`, `max`
+### `array.min`, `array.max`
 
 Returns the smallest or largest number in the array.
 
@@ -502,7 +502,7 @@ Returns the smallest or largest number in the array.
 [].min; // undefined
 ```
 
-### `uniq`
+### `array.uniq`
 
 Returns a new array with duplicate elements removed.
 
@@ -510,7 +510,7 @@ Returns a new array with duplicate elements removed.
 [1, 2, 2, 3].uniq; // [1, 2, 3]
 ```
 
-### `to_sentence`
+### `array.to_sentence`
 
 Converts the array into a human-readable sentence.
 
@@ -518,7 +518,7 @@ Converts the array into a human-readable sentence.
 ["a", "b", "c"].to_sentence; // "a, b and c"
 ```
 
-### `compact`
+### `array.compact`
 
 Returns a new array with null and undefined values removed.
 
@@ -526,7 +526,7 @@ Returns a new array with null and undefined values removed.
 [1, null, 2, undefined, 3].compact; // [1, 2, 3]
 ```
 
-### `to_param`
+### `array.to_param`
 
 Converts the array into a string joined by /.
 
@@ -536,7 +536,7 @@ Converts the array into a string joined by /.
 
 ## Functional Methods
 
-### `any(func?)`
+### `array.any(func?)`
 
 Returns true if at least one element satisfies func, or if the array is not empty.
 
@@ -545,7 +545,7 @@ Returns true if at least one element satisfies func, or if the array is not empt
 [].any(); // false
 ```
 
-### `one(func?)`
+### `array.one(func?)`
 
 Returns true if exactly one element satisfies func.
 
@@ -554,22 +554,21 @@ Returns true if exactly one element satisfies func.
 [1, 2, 3, 4].one(x => x > 2); // false
 ```
 
-### `sum(func?)`
+### `array.sum`
 
 Returns the sum of all elements, or applies func before summing.
 
 ```javascript
-[1, 2, 3].sum(); // 6
-[1, 2, 3].sum(x => x * 2); // 12
+[1, 2, 3].sum; // 6
 ```
 
-### `reject(func)`
+### `array.reject(func)`
 
 Returns a new array without elements matching func.
 
 [1, 2, 3, 4].reject(x => x % 2 === 0); // [1, 3]
 
-### `partition(func)`
+### `array.partition(func)`
 
 Splits the array into two: one matching func, one not.
 
@@ -577,7 +576,7 @@ Splits the array into two: one matching func, one not.
 [1, 2, 3, 4].partition(x => x % 2 === 0); // [[2, 4], [1, 3]]
 ```
 
-### `count(func?)`
+### `array.count(func?)`
 
 Returns the number of elements satisfying func, or the total length.
 
@@ -586,7 +585,7 @@ Returns the number of elements satisfying func, or the total length.
 [1, 2, 3].count(); // 3
 ```
 
-### `pluck(prop)`
+### `array.pluck(prop)`
 
 Extracts values of the given property from an array of objects.
 
@@ -594,7 +593,7 @@ Extracts values of the given property from an array of objects.
 [{id: 1}, {id: 2}].pluck("id"); // [1, 2]
 ```
 
-### `from(n)`
+### `array.from(n)`
 
 Returns a new array starting from index n.
 
@@ -602,7 +601,7 @@ Returns a new array starting from index n.
 [10, 20, 30, 40].from(2); // [30, 40]
 ```
 
-### `combination(n)`
+### `array.combination(n)`
 
 Returns all possible combinations of n elements.
 
@@ -610,7 +609,7 @@ Returns all possible combinations of n elements.
 [1, 2, 3].combination(2); // [[1,2], [1,3], [2,3]]
 ```
 
-### `tally()`
+### `array.tally()`
 
 Counts occurrences of each unique element.
 
@@ -618,7 +617,7 @@ Counts occurrences of each unique element.
 ["a", "b", "a"].tally(); // { a: 2, b: 1 }
 ```
 
-### `each_cons(n)`
+### `array.each_cons(n)`
 
 Returns overlapping subarrays of size n.
 
@@ -626,7 +625,7 @@ Returns overlapping subarrays of size n.
 [1, 2, 3, 4].each_cons(2); // [[1,2], [2,3], [3,4]]
 ```
 
-### `rotate(n = 1)`
+### `array.rotate(n = 1)`
 
 Returns a rotated array by n places.
 
@@ -634,7 +633,7 @@ Returns a rotated array by n places.
 [1, 2, 3].rotate(); // [2, 3, 1]
 ```
 
-### `sample(n = 1)`
+### `array.sample(n = 1)`
 
 Returns n random elements.
 
@@ -642,7 +641,7 @@ Returns n random elements.
 [1, 2, 3, 4].sample(2); // Random subset
 ```
 
-### `zip(arr)`
+### `array.zip(arr)`
 
 Zips two arrays together.
 
@@ -650,7 +649,7 @@ Zips two arrays together.
 [1, 2, 3].zip(["a", "b", "c"]); // [[1, "a"], [2, "b"], [3, "c"]]
 ```
 
-### `union(...arrs)`
+### `array.union(...arrs)`
 
 Returns a merged array without duplicates.
 
