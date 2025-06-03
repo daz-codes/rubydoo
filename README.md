@@ -12,8 +12,8 @@ Write code like:
 [1,2,3].last // 3
 [1,2,3].count // 3
 (21).ordinalize // "21st"
-"Rubydoobydoo".reverse //m "oodyboodybuR"
-[1,2,3].sum.squared // 9
+"Rubydoobydoo".downcase.reverse // "oodyboodybur"
+[1,2,3].sum.squared // 36
 ["A","A","C","A","B","A","B"].tally // {"A": 4, "C": 1, "B": 2}
 ```
 ## Ruby Dooby Doo!
@@ -24,7 +24,24 @@ Write code like:
 npm install rubydoobydoo
 ```
 
-Then just add either `require "rubydoobydoo"` or `import "rubydoobydoo"` to the top of any JS file and suddenly coding in JS becomes a lot more ejoyable!
+Then just add either `require "rubydoobydoo"` or `import "rubydoobydoo"` to the top of any JS file and suddenly coding in JS becomes a lot more fun and productive!
+
+In general, if you know the Ruby methods you should be able to use them in almost the same way, with a few slight changes:
+
+* Blocks change to arrow functions
+* JavaScript does not support appending symbols to the end of function names, so Boolean methods can't end in a `?`
+
+So for example, this Ruby:
+
+```ruby
+[1,2,3].count{ |n| n.odd? }
+```
+
+Would be written in JavaScript as:
+
+```javascript
+[1,2,3].count( n => n.odd )
+```
 
 # Number Methods
 
@@ -457,13 +474,13 @@ Returns true if the array is empty, false otherwise.
 [1].empty; // false
 ```
 
-### `array.clear()`
+### `array.clear`
 
 Clears all elements from the array.
 
 ```javascript
 let arr = [1, 2, 3];
-arr.clear();
+arr.clear;
 console.log(arr); // []
 ```
 
@@ -537,13 +554,12 @@ Returns true if exactly one element satisfies func.
 [1, 2, 3, 4].one(x => x > 2); // false
 ```
 
-### `array.sum(func?)`
+### `array.sum`
 
 Returns the sum of all elements, or applies func before summing.
 
 ```javascript
-[1, 2, 3].sum(); // 6
-[1, 2, 3].sum(x => x * 2); // 12
+[1, 2, 3].sum; // 6
 ```
 
 ### `array.reject(func)`
@@ -616,7 +632,7 @@ Returns overlapping subarrays of size n.
 [1, 2, 3, 4].each_cons(2); // [[1,2], [2,3], [3,4]]
 ```
 
-### `rotate(n = 1)`
+### `array.rotate(n = 1)`
 
 Returns a rotated array by n places.
 
@@ -624,7 +640,7 @@ Returns a rotated array by n places.
 [1, 2, 3].rotate(); // [2, 3, 1]
 ```
 
-### `sample(n = 1)`
+### `array.sample(n = 1)`
 
 Returns n random elements.
 
@@ -632,7 +648,7 @@ Returns n random elements.
 [1, 2, 3, 4].sample(2); // Random subset
 ```
 
-### `zip(arr)`
+### `array.zip(arr)`
 
 Zips two arrays together.
 
@@ -640,7 +656,7 @@ Zips two arrays together.
 [1, 2, 3].zip(["a", "b", "c"]); // [[1, "a"], [2, "b"], [3, "c"]]
 ```
 
-### `union(...arrs)`
+### `array.union(...arrs)`
 
 Returns a merged array without duplicates.
 
