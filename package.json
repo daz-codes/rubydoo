@@ -1,6 +1,6 @@
 {
   "name": "rubydoo",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Monkey patching JavaScript to make it Ruby Dooby Doo!",
   "main": "index.js",
   "type": "module",
