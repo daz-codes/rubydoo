@@ -1,10 +1,10 @@
 # Ruby Doo
 
-Helping JS do more Ruby.
+Making JS do more Ruby.
 
-Unashamedly monkey patching JS numbers, strings, arrays, objects and dates with Ruby methods.
+Unashamedly monkey patching JS numbers, strings, arrays, objects and dates with Ruby and Rails-like methods.
 
-Ruby has loads of really nice methods, now you can use them in JS as well!
+Ruby (and Rails) has loads of really nice methods, now you can use them in JS as well!
 
 Write code like:
 
@@ -25,7 +25,7 @@ Write code like:
 npm install rubydoo
 ```
 
-Then just add either `require "rubydoobydoo"` or `import "rubydoobydoo"` to the top of any JS file and suddenly coding in JS becomes a lot more fun and productive!
+Then just add either `require "rubydoo"` or `import "rubydoo"` to the top of any JS file and suddenly coding in JS becomes a lot more fun and productive!
 
 In general, if you know the Ruby methods you should be able to use them in almost the same way, with a few slight changes:
 
@@ -46,7 +46,7 @@ Would be written in JavaScript as:
 
 ## Temple to Func
 
-Ruby has this nice syntax to make calling methods on objects easier, so instead of `[1,2,3].map { |n| n.next }` you can just write `[1,2,3].map(&:next)`
+Ruby has this really nice syntax to make calling methods on objects easier, so instead of `[1,2,3].map { |n| n.next }` you can just write `[1,2,3].map(&:next)`
 
 JavaScript doesn't let you use `&` and doesn't have symbol literals, but you can use `$` and it does have template literals and tag functions, so in Ruby Doo, you can do the same thing like this:
 
@@ -694,6 +694,7 @@ Returns a merged array without duplicates.
 # Object Methods
 
 ## `object.empty`
+
 Checks if an object has no keys.
 
 ```javascript
@@ -701,74 +702,130 @@ Checks if an object has no keys.
 ({ a: 1 }).empty;  // false
 ```
 
-object.size
+## `object.size`
+
 Returns the number of keys in the object.
 
+```javascript
 ({ a: 1, b: 2 }).size;  // 2
-object.values
+```
+`
+## `object.values`
+
 Returns an array of the object's values.
 
+```javascript
 ({ a: 1, b: 2 }).values;  // [1, 2]
-object.keys
+```
+
+## `object.keys`
+
 Returns an array of the object's keys.
 
+```javascript
 ({ a: 1, b: 2 }).keys;  // ["a", "b"]
-object.entries
+```
+
+## `object.entries`
+
 Returns an array of [key, value] pairs.
 
+```javascript
 ({ a: 1, b: 2 }).entries;  // [["a", 1], ["b", 2]]
-object.clear
+```
+
+## `object.clear`
+
 Removes all properties from an object (mutates it).
 
 const obj = { a: 1, b: 2 };
-obj.clear;
+obj.clear
 console.log(obj);  // {}
-object.compact
+
+## `object.compact`
+
 Returns a new object with null and undefined values removed.
 
+```javascript
 ({ a: 1, b: null, c: undefined }).compact;  // { a: 1 }
-Methods
+```
 
-object.map(func)
+## Methods
+
+## `object.map(func)`
+
 Applies a function to each [key, value] pair and returns an array of results.
 
+```javascript
 ({ a: 1, b: 2 }).map(([k, v]) => [k, v * 2]);  // [["a", 2], ["b", 4]]
-object.select(func)
+```
+
+## `object.select(func)`
+
 Returns a new object with key-value pairs where func(key, value) is true.
 
+```javascript
 ({ a: 1, b: 2 }).select(([k, v]) => v > 1);  // { b: 2 }
-object.keep_if(func)
+```
+
+## `object.keep_if(func)`
+
 Alias for select.
 
-object.reject(func)
+## `object.reject(func)`
+
 Returns a new object with key-value pairs where func(key, value) is false.
 
+```javascript
 ({ a: 1, b: 2 }).reject(([k, v]) => v > 1);  // { a: 1 }
-object.delete_if(func)
+```
+
+## `object.delete_if(func)`
+
 Alias for reject.
 
-object.has_key(key)
+## `object.has_key(key)`
+
 Checks if an object has a given key.
 
+```javascript
 ({ a: 1 }).has_key("a");  // true
 ({ a: 1 }).has_key("b");  // false
-object.has_value(value)
+```
+
+## `object.has_value(value)`
+
 Checks if an object contains a given value.
 
+```javascript
 ({ a: 1, b: 2 }).has_value(2);  // true
 ({ a: 1 }).has_value(3);  // false
-object.key(value)
+```
+
+## `object.key(value)`
+
 Returns the first key where the value matches, or undefined if not found.
 
+```javascript
 ({ a: 1, b: 2 }).key(2);  // "b"
 ({ a: 1 }).key(3);  // undefined
-object.any([func])
+```
+
+## `object.any([func])`
+
 If func is provided, checks if any key-value pair matches func(key, value).
 If func is omitted, returns true if the object is not empty.
+
+```javascript
 ({ a: 1, b: 2 }).any();  // true
 ({}).any();  // false
 ({ a: 1, b: 2 }).any(([k, v]) => v > 1);  // true
-object.except(...keys)
+```
+
+## `object.except(...keys)`
+
 Returns a new object excluding specified keys.
 
+```javascript
 ({ a: 1, b: 2, c: 3 }).except("b", "c");  // { a: 1 }
+```
