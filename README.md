@@ -2,7 +2,7 @@
 
 Helping JS do more Ruby.
 
-Unashamedly monkey patching JS numbers, strings, arrays and objects with Ruby methods.
+Unashamedly monkey patching JS numbers, strings, arrays, objects and dates with Ruby methods.
 
 Ruby has loads of really nice methods, now you can use them in JS as well!
 
@@ -15,13 +15,14 @@ Write code like:
 "Rubydoobydoo".downcase.reverse // "oodyboodybur"
 [1,2,3].sum.squared // 36
 ["A","A","C","A","B","A","B"].tally // {"A": 4, "C": 1, "B": 2}
+(1).day.ago // yesterday
 ```
 ## Ruby Dooby Doo!
 
 ## Usage
 
 ```bash
-npm install rubydoobydoo
+npm install rubydoo
 ```
 
 Then just add either `require "rubydoobydoo"` or `import "rubydoobydoo"` to the top of any JS file and suddenly coding in JS becomes a lot more fun and productive!
@@ -29,7 +30,7 @@ Then just add either `require "rubydoobydoo"` or `import "rubydoobydoo"` to the 
 In general, if you know the Ruby methods you should be able to use them in almost the same way, with a few slight changes:
 
 * Blocks change to arrow functions
-* JavaScript does not support appending symbols to the end of function names, so Boolean methods can't end in a `?`
+* JavaScript does not support appending symbols to the end of function names, so Boolean methods can't end in a `?`, so these have `is` prepended to them.
 
 So for example, this Ruby:
 
@@ -40,7 +41,17 @@ So for example, this Ruby:
 Would be written in JavaScript as:
 
 ```javascript
-[1,2,3].count( n => n.odd )
+[1,2,3].count( n => n.isOdd )
+```
+
+## Temple to Func
+
+Ruby has this nice syntax to make calling methods on objects easier, so instead of `[1,2,3].map { |n| n.next }` you can just write `[1,2,3].map(&:next)`
+
+JavaScript doesn't let you use `&` and doesn't have symbol literals, but you can use `$` and it does have template literals and tag functions, so in Ruby Doo, you can do the same thing like this:
+
+```javascript
+[1,2,3].map($`next`)
 ```
 
 # Number Methods
