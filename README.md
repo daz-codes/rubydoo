@@ -752,14 +752,6 @@ Returns a new object with null and undefined values removed.
 
 ## Methods
 
-## `object.map(func)`
-
-Applies a function to each [key, value] pair and returns an array of results.
-
-```javascript
-({ a: 1, b: 2 }).map(([k, v]) => [k, v * 2]);  // [["a", 2], ["b", 4]]
-```
-
 ## `object.select(func)`
 
 Returns a new object with key-value pairs where func(key, value) is true.
