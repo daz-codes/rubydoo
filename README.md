@@ -1,5 +1,4 @@
 # Ruby Monkey
-<img width="437" height="437" alt="rubychimp" src="https://github.com/user-attachments/assets/cee09e69-6617-415b-ab66-7880032c3b63" />
 
 Unashamedly monkey patching JavaScript to be more like Ruby.
 
@@ -7,8 +6,9 @@ Ruby (and Rails) has loads of really nice methods, now you can use them in JS as
 
 Ruby Monkey helps to make your JavaScript code more code elegant, fun and productive!
 
+<img width="200" height="200" alt="ruby monkey" src="https://github.com/user-attachments/assets/cee09e69-6617-415b-ab66-7880032c3b63" />
 
-Write code like:
+Now you can write JS code like:
 
 ```javascript
 [1,2,3].last // 3
