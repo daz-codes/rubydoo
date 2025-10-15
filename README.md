@@ -2,11 +2,11 @@
 
 Unashamedly monkey patching JavaScript to be more like Ruby.
 
+<img width="250" height="250" alt="ruby monkey" src="https://github.com/user-attachments/assets/cee09e69-6617-415b-ab66-7880032c3b63" />
+
 Ruby (and Rails) has loads of really nice methods, now you can use them in JS as well!
 
 Ruby Monkey helps to make your JavaScript code more code elegant, fun and productive!
-
-<img width="200" height="200" alt="ruby monkey" src="https://github.com/user-attachments/assets/cee09e69-6617-415b-ab66-7880032c3b63" />
 
 Now you can write JS code like this:
 
