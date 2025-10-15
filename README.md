@@ -1,6 +1,6 @@
 # Ruby Monkey
 
-Unashamedly monkey patching JavaScript to be more like Ruby.
+*Unashamedly monkey patching JavaScript to be more like Ruby.*
 
 <img width="250" height="250" alt="ruby monkey" src="https://github.com/user-attachments/assets/cee09e69-6617-415b-ab66-7880032c3b63" />
 
