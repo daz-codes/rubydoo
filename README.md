@@ -1,10 +1,12 @@
-# Ruby Doo
+# Ruby Monkey
+<img width="437" height="437" alt="rubychimp" src="https://github.com/user-attachments/assets/cee09e69-6617-415b-ab66-7880032c3b63" />
 
-Making JS do more Ruby.
-
-Unashamedly monkey patching JS numbers, strings, arrays, objects and dates with Ruby and Rails-like methods.
+Unashamedly monkey patching JavaScript to be more like Ruby.
 
 Ruby (and Rails) has loads of really nice methods, now you can use them in JS as well!
+
+Ruby Monkey helps to make your JavaScript code more code elegant, fun and productive!
+
 
 Write code like:
 
@@ -12,12 +14,11 @@ Write code like:
 [1,2,3].last // 3
 [1,2,3].count // 3
 (21).ordinalize // "21st"
-"Rubydoobydoo".downcase.reverse // "oodyboodybur"
+"RubyMonkey".downcase.reverse // "yeknomybur"
 [1,2,3].sum.squared // 36
 ["A","A","C","A","B","A","B"].tally // {"A": 4, "C": 1, "B": 2}
 (1).day.ago // yesterday
 ```
-## Ruby Dooby Doo!
 
 ## Usage
 
